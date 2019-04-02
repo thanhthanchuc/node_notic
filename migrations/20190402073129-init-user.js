@@ -14,8 +14,8 @@ module.exports = {
       phoneNumber: { type: STRING, allowNull: false, unique: true },
       email_verified_at: { type: DATE },
       password: { type: STRING, allowNull: false },
-      created_at: { type: DATE, defaultValue: Date.now },
-      updated_at: { type: DATE, defaultValue: Date.now }
+      createdAt: { type: DATE, defaultValue: Date.now },
+      updatedAt: { type: DATE, defaultValue: Date.now }
     })
   },
 

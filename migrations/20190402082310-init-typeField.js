@@ -5,8 +5,8 @@ module.exports = {
     return await queryInterface.createTable('typeFields', {
       id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
       name: { type: Sequelize.STRING, allowNull: false },
-      created_at: { type: Sequelize.DATE, defaultValue: Date.now },
-      updated_at: { type: Sequelize.DATE, defaultValue: Date.now }
+      createdAt: { type: Sequelize.DATE, defaultValue: Date.now },
+      updatedAt: { type: Sequelize.DATE, defaultValue: Date.now }
     })
   },
 

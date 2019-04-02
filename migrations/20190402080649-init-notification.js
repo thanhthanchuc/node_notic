@@ -22,8 +22,8 @@ module.exports = {
         }
       },
       deadline: { type: DATE },
-      created_at: { type: Sequelize.DATE, defaultValue: Date.now },
-      updated_at: { type: Sequelize.DATE, defaultValue: Date.now }
+      createdAt: { type: Sequelize.DATE, defaultValue: Date.now },
+      updatedAt: { type: Sequelize.DATE, defaultValue: Date.now }
     })
   },
 
