@@ -1,7 +1,8 @@
 const express = require('express');
-const Joi = require('joi');
 const router = express.Router();
+const _ = require('underscore');
 const models = require('../models'); 
+const { validate } = require('../services/user');
 
 /* GET users listing. */
 router.get('/', async (req, res) => {
@@ -60,22 +61,7 @@ router.post('/', async (req, res) => {
   if(user)
     return res.status(400).send('Phone number was used!')
   user = await models.User.create(obj);
-  res.send(user);
+  res.send(_.pick(user, 'name', 'email'));
 })
-
-function validate(user) {
-  const schema = {
-    name: Joi.string().required(),
-    email: Joi.string().required().email(),
-    birthday: Joi.date().required(),
-    address: Joi.string().required(),
-    gender: Joi.string(),
-    email_verified_at: Joi.date(),
-    phoneNumber: Joi.string().required()
-      .regex(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im),
-    password: Joi.string().required().regex(/(?=.{8,})/)
-  }
-  return Joi.validate(user, schema);
-}
 
 module.exports = router;
