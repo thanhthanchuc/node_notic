@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var users = require('./routes/users');
+const notifications = require('./routes/notifications');
 
 var app = express();
 
@@ -15,5 +16,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/users', users);
+app.use('/api/notifications', notifications);
 
 module.exports = app;
