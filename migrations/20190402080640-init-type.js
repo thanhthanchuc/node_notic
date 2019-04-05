@@ -1,4 +1,5 @@
 'use strict';
+//notification,summon,form
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
