@@ -1,4 +1,3 @@
-const models = require('../models/user');
 const Joi = require('joi');
 
 function validate(user) {
